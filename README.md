@@ -19,4 +19,4 @@ Learning to tie a local git project into a github repository
 
 < make and commit changes >
 
-git push
+* git push
