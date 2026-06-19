@@ -20,3 +20,7 @@ Learning to tie a local git project into a github repository
 < make and commit changes >
 
 * git push
+
+< add action / workflow from GUI >
+
+* git pull origin main
