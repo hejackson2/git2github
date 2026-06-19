@@ -16,3 +16,7 @@ Learning to tie a local git project into a github repository
 * gh repo create <GH_REPO_NAME> --public --source=. --remote=origin --push
 
 * git remote -v
+
+< make and commit changes >
+
+git push
