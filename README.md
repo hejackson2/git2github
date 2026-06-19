@@ -7,7 +7,7 @@ Learning to tie a local git project into a github repository
 * git init -b main
 
 * git configure
-    * --local core.sshCommand "ssh -i ~/.ssh/GH_SSH_KEY -F /dev/null"
+    * --local core.sshCommand "ssh -i ~/.ssh/<GH_SSH_KEY>"
     * --local user.name <GH_USERNAME>
     * --local user.email <GH_EMAIL>
 
