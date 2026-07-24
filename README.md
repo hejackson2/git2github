@@ -41,6 +41,23 @@ gh auth switch --user work_account
 gh auth switch --hostname internal-github.work.com --user user@work.com
 ```
 
+### Configure Git Credential Helper (`gh auth setup-git`)
+
+To allow standard Git HTTPS operations (`git push`, `git pull`, `git fetch`) to automatically use the active `gh` account credentials, configure Git to use `gh` as its credential helper:
+
+```bash
+# Configure credential helper for github.com
+gh auth setup-git
+
+# Configure credential helper for Enterprise / internal host
+gh auth setup-git --hostname internal-github.work.com
+```
+
+#### Why use `gh auth setup-git`?
+- **Automatic Account Alignment:** Configures `git config --global credential.https://github.com.helper "!gh auth git-credential"`. When you run `git push`, Git requests credentials from `gh`, which uses whichever account is currently active (`gh auth switch --user <username>`).
+- **Prevents `403 Permission Denied` Errors:** Solves authentication failures caused by stale credentials cached in your operating system keychain (e.g. macOS Keychain or Windows Credential Manager).
+- **Seamless HTTPS Workflow:** Eliminates the need to manually manage Personal Access Tokens (PATs) or keychain entries when switching accounts.
+
 ---
 
 ## 2. Setting Up SSH Keys & `~/.ssh/config`
